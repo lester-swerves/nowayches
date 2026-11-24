@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOHS | Negros Occidental High School</title>
+<style>
+:root{--maroon:#720909;--red:#a71919;--gold:#c9a227;--beige:#f5e8cf;--cream:#fffaf0;--white:#fff;--banner-ratio:16/6}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:var(--cream);color:#351414;line-height:1.6}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+nav{background:var(--maroon);color:#fff;display:flex;align-items:center;padding:12px 6%;position:sticky;top:0;z-index:1000;border-bottom:4px solid var(--gold);flex-wrap:wrap;gap:10px}
+.logo-area{display:flex;align-items:center;gap:12px}
+.logo-area img{width:64px;height:64px;border-radius:50%;object-fit:contain;background:#fff;border:3px solid var(--gold)}
+.logo-text{font-weight:bold;font-size:22px;line-height:1.2}
+.logo-text small{display:block;color:#f3d56b;font-size:11px}
+.nav-motto{font-family:Georgia,serif;font-style:italic;font-weight:bold;font-size:20px;color:var(--gold);letter-spacing:1px;white-space:nowrap;margin-left:18px;padding-left:18px;border-left:2px solid var(--gold)}
+nav ul{display:flex;gap:25px;list-style:none;flex-wrap:wrap;margin-left:auto}
+nav a{color:#fff;text-decoration:none;font-weight:bold}
+nav a:hover{color:var(--gold)}
+
+/* HERO: the box matches the banner's real shape (set automatically by the script below), so nothing is cropped */
+.hero{position:relative;overflow:hidden;width:100%;aspect-ratio:var(--banner-ratio);max-height:80vh;display:flex;align-items:flex-end;justify-content:center;text-align:center;color:#fff;border-bottom:8px solid var(--gold);background:var(--maroon)}
+.slides{position:absolute;inset:0;display:flex;transition:transform .6s ease}
+.slide{position:relative;overflow:hidden;flex:0 0 100%;height:100%;background-position:center;background-size:cover;background-repeat:no-repeat}
+/* blurred copy fills any leftover space (e.g. if 1.jpg or 2.jpg is a different shape) */
+.slide::before,.slide::after{content:"";position:absolute;inset:0;background-image:inherit;background-position:center;background-repeat:no-repeat}
+.slide::before{background-size:cover;filter:blur(22px);transform:scale(1.1)}
+/* the real image, shown whole */
+.slide::after{background-size:contain}
+.hero-content{position:relative;z-index:2;padding:0 7% 40px;max-width:760px}
+.hero-content p{font-size:clamp(16px,2.2vw,20px);margin-bottom:20px;color:var(--cream);text-shadow:0 2px 6px rgba(0,0,0,.5)}
+.hero-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn.outline{background:transparent;color:#fff;border:2px solid var(--gold)}
+.btn.outline:hover{background:var(--gold);color:var(--maroon)}
+
+.btn{display:inline-block;padding:12px 26px;background:var(--gold);color:var(--maroon);border:0;border-radius:6px;font-weight:bold;font-size:16px;text-decoration:none;cursor:pointer;transition:.3s}
+.btn:hover{background:#fff;transform:translateY(-2px)}
+
+section{padding:80px 7%;scroll-margin-top:80px}
+.section-title{text-align:center;margin-bottom:45px}
+.section-title h2{font-family:Georgia,serif;color:var(--maroon);font-size:clamp(30px,4.5vw,42px)}
+.gold-line{width:80px;height:4px;background:var(--gold);margin:15px auto}
+
+.about{background:var(--beige)}
+.about-box{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.school-photo{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:80% 60%;border:7px solid #fff;border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,.2)}
+.about-text h3{color:var(--maroon);font-family:Georgia,serif;font-size:30px;margin-bottom:20px}
+.about-text p{line-height:1.8;margin-bottom:15px}
+
+.mv{max-width:1100px;margin:50px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.mv article{background:#fff;border-top:6px solid var(--gold);border-radius:8px;padding:30px}
+.mv article.dark{background:var(--maroon);color:#fff}
+.mv h4{font-family:Georgia,serif;font-size:24px;margin-bottom:10px;color:var(--maroon)}
+.mv .dark h4{color:var(--gold)}
+
+.gallery-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.gallery-grid figure{border:6px solid #fff;border-radius:8px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.18);background:#fff}
+.shot{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background-color:var(--beige)}
+.gallery-grid figcaption{padding:9px 12px;font-weight:bold;color:var(--maroon);font-size:14px}
+.note{text-align:center;margin-top:24px;font-size:14px;color:#7a5a5a}
+
+.academics{background:var(--beige)}
+.card-grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.card{background:#fff;border-left:6px solid var(--red);border-radius:6px;padding:26px}
+.card h4{font-family:Georgia,serif;color:var(--maroon);font-size:22px;margin-bottom:8px}
+
+.contact-box{max-width:1000px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.channel{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.ico{flex:0 0 44px;height:44px;border-radius:50%;background:var(--maroon);border:2px solid var(--gold);display:grid;place-items:center}
+.ico svg{width:22px;height:22px;fill:none;stroke:var(--gold);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ico svg.fill{fill:var(--gold);stroke:none}
+.channel b{display:block;color:var(--maroon)}
+.quick{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.quick .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;font-size:15px}
+.quick .btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.quick .btn svg.fill{fill:currentColor;stroke:none}
+.quick .btn.static,.quick .btn.static:hover{background:var(--maroon);color:#fff;transform:none;cursor:default}
+.btn.dark{background:var(--maroon);color:#fff}
+.btn.dark:hover{background:var(--red);color:#fff}
+.contact-info h3{font-family:Georgia,serif;color:var(--maroon);font-size:26px;margin-bottom:14px}
+.contact-info p{margin-bottom:12px;line-height:1.7}
+form{display:grid;gap:14px}
+label{font-weight:bold;color:var(--maroon);font-size:14px}
+input,textarea{width:100%;padding:12px;border:2px solid #d9c9a6;border-radius:6px;font:inherit;background:#fff}
+textarea{min-height:130px;resize:vertical}
+
+footer{background:#4d0606;color:var(--beige);text-align:center;padding:28px 7%;font-size:14px;border-top:4px solid var(--gold)}
+footer em{display:block;color:var(--gold);margin-bottom:6px;font-family:Georgia,serif;font-size:16px}
+
+.video-section{background:var(--beige)}
+.video-frame{max-width:900px;margin:auto;border:7px solid #fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.2);background:#000}
+.video-frame video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.video-caption{text-align:center;margin-top:16px;font-size:14px;color:#7a5a5a}
+
+@media(max-width:1000px){
+  nav{flex-direction:column;text-align:center}
+  nav ul{margin-left:0;justify-content:center}
+  .nav-motto{margin-left:0;padding-left:0;border-left:0}
+}
+@media(max-width:900px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:800px){.about-box,.mv,.contact-box{grid-template-columns:1fr}section{padding:60px 6%}nav ul{gap:16px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo-area">
+    <img src="images/logo.jfif" alt="NOHS seal">
+    <div class="logo-text">NOHS<small>Negros Occidental High School</small></div>
+  </div>
+
+  <div class="nav-motto">Culture of Excellence</div>
+
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="academics.html">Academics</a></li>
+    <li><a href="members.html">Members</a></li>
+    <li><a href="contact.html">Contacts</a></li>
+  </ul>
+</nav>
+
+<header id="home" class="hero" role="img" aria-label="Negros Occidental High School banner: Tradition, Excellence, Service">
+  <div class="slides" aria-hidden="true">
+    <div class="slide" style="background-image:url('images/banner.png')"></div>
+    <div class="slide" style="background-image:url('images/1.jpg')"></div>
+    <div class="slide" style="background-image:url('images/2.jpg')"></div>
+    <!-- copy of banner 1 so the loop wraps smoothly; keep it the same as the first one -->
+    <div class="slide" style="background-image:url('images/banner.png')"></div>
+  </div>
+  <div class="hero-content">
+  </div>
+</header>
+
+<section id="video" class="video-section">
+  <div class="section-title"><h2>The oldest public secondary school in Negros Occidental</h2><div class="gold-line"></div></div>
+  <div class="video-frame">
+    <video controls preload="metadata" playsinline>
+      <source src="videos/videopresent.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+<script>
+/* Size the hero to banner.png's real proportions so it fits exactly, with no cropping */
+(function(){
+  var img=new Image();
+  img.onload=function(){
+    if(img.naturalWidth&&img.naturalHeight){
+      document.documentElement.style.setProperty('--banner-ratio',img.naturalWidth+'/'+img.naturalHeight);
+    }
+  };
+  img.src='images/banner.png';
+})();
+
+(function(){
+  var track=document.querySelector('.slides');
+  if(!track||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var total=track.children.length, i=0;
+  setInterval(function(){
+    i++;
+    track.style.transition='transform .6s ease';
+    track.style.transform='translateX(-'+(i*100)+'%)';
+    if(i===total-1){            // reached the copy of banner 1
+      setTimeout(function(){    // jump back to the real first slide, unseen
+        track.style.transition='none';
+        i=0;
+        track.style.transform='translateX(0)';
+      },600);
+    }
+  },2500);
+})();
+</script>
+
+</body>
+</html>

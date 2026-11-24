@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOHS | Negros Occidental High School</title>
+<style>
+:root{--maroon:#720909;--red:#a71919;--gold:#c9a227;--beige:#f5e8cf;--cream:#fffaf0;--white:#fff}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:var(--cream);color:#351414;line-height:1.6}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+nav{background:var(--maroon);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 6%;position:sticky;top:0;z-index:1000;border-bottom:4px solid var(--gold);flex-wrap:wrap;gap:10px}
+.logo-area{display:flex;align-items:center;gap:12px}
+.logo-area img{width:64px;height:64px;border-radius:50%;object-fit:contain;background:#fff;border:3px solid var(--gold)}
+.logo-text{font-weight:bold;font-size:22px;line-height:1.2}
+.logo-text small{display:block;color:#f3d56b;font-size:11px}
+nav ul{display:flex;gap:25px;list-style:none;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none;font-weight:bold}
+nav a:hover{color:var(--gold)}
+
+.btn{display:inline-block;padding:12px 26px;background:var(--gold);color:var(--maroon);border:0;border-radius:6px;font-weight:bold;font-size:16px;text-decoration:none;cursor:pointer;transition:.3s}
+.btn:hover{background:#fff;transform:translateY(-2px)}
+
+section{position:relative;overflow:hidden;padding:80px 7%;scroll-margin-top:80px}
+.section-title{text-align:center;margin-bottom:45px}
+.section-title h2{font-family:Georgia,serif;color:var(--maroon);font-size:clamp(30px,4.5vw,42px)}
+.gold-line{width:80px;height:4px;background:var(--gold);margin:15px auto}
+
+footer{background:#4d0606;color:var(--beige);text-align:center;padding:28px 7%;font-size:14px;border-top:4px solid var(--gold)}
+
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}.btn{transition:none}}
+
+.heads-box{max-width:1100px;margin:auto;background:#fff;border:5px double var(--maroon);box-shadow:0 0 0 4px #fff,0 0 0 6px var(--gold),0 10px 25px rgba(114,9,9,.15);padding:36px}
+.heads-intro{text-align:center;max-width:680px;margin:0 auto 30px;color:#5a3a3a}
+.heads-cols{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.heads-group h3{font-family:Georgia,serif;color:var(--maroon);font-size:22px;padding-bottom:8px;border-bottom:3px solid var(--gold);margin-bottom:6px}
+.heads-group .sub{font-size:14px;color:#7a5a5a;margin:8px 0 10px}
+.heads-list{list-style:none}
+.heads-list li{display:grid;grid-template-columns:9.5rem 1fr;gap:12px;padding:9px 10px;border-bottom:1px solid #eadfc6;line-height:1.4}
+.heads-list li:nth-child(even){background:var(--cream)}
+.heads-list .yrs{color:var(--red);font-weight:bold;font-size:14px}
+.heads-list .nm{color:#351414}
+.heads-list li.current{background:var(--maroon);border-radius:6px;border-bottom:0;margin-top:6px}
+.heads-list li.current .yrs{color:var(--gold)}
+.heads-list li.current .nm{color:#fff;font-weight:bold}
+@media(max-width:900px){.heads-cols{grid-template-columns:1fr}.heads-box{padding:24px 16px}}
+@media(max-width:480px){.heads-list li{grid-template-columns:1fr;gap:2px}}
+
+/* HERITAGE RIBBONS: scalloped edges, ribbon headings, offset-shadow cards, polaroid photo, maroon heads section */
+.section-title{filter:drop-shadow(0 4px 3px rgba(0,0,0,.25))}
+.section-title h2{display:inline-block;background:var(--maroon);color:#fff;padding:10px 64px;font-size:clamp(26px,4vw,38px);
+  clip-path:polygon(0 0,100% 0,calc(100% - 24px) 50%,100% 100%,0 100%,24px 50%)}
+.gold-line{width:140px;height:3px;margin:12px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+.about{padding-top:96px;padding-bottom:100px;background:var(--beige)}
+.about::before{content:"";position:absolute;top:0;left:0;right:0;height:14px;background:radial-gradient(circle at 12px 0,var(--gold) 11px,transparent 11.5px) 0 0/24px 14px repeat-x}
+.about::after{content:"1902";position:absolute;right:3%;bottom:-2%;font-family:Georgia,serif;font-weight:bold;font-size:clamp(120px,24vw,320px);line-height:1;color:rgba(114,9,9,.07);pointer-events:none}
+.about-box,.mv{position:relative;z-index:1}
+
+.polaroid{background:#fff;padding:14px 14px 20px;transform:rotate(-2.5deg);box-shadow:0 14px 28px rgba(0,0,0,.28);position:relative}
+.polaroid::before{content:"";position:absolute;top:-14px;left:50%;width:110px;height:28px;margin-left:-55px;transform:rotate(3deg);background:rgba(201,162,39,.65);box-shadow:0 2px 4px rgba(0,0,0,.15)}
+.polaroid .school-photo{display:block;border:0;border-radius:0;box-shadow:none}
+.polaroid figcaption{text-align:center;font-family:Georgia,serif;font-style:italic;font-weight:bold;color:var(--maroon);font-size:20px;padding-top:14px}
+
+.about-text{background:#fff;border:3px solid var(--gold);box-shadow:10px 10px 0 var(--maroon);padding:28px 30px}
+.about-text h3{color:var(--maroon);font-family:Georgia,serif;font-size:30px;margin-bottom:18px}
+.about-text p{line-height:1.8;margin-bottom:15px}
+.about-text p:last-child{margin-bottom:0}
+
+.mv{max-width:1100px;margin:60px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.mv article{background:#fff;border:3px solid var(--gold);border-radius:0;box-shadow:10px 10px 0 var(--maroon);padding:30px}
+.mv article.dark{background:var(--maroon);color:#fff;border-color:var(--gold);box-shadow:10px 10px 0 var(--gold)}
+.mv h4{font-family:Georgia,serif;font-size:24px;margin-bottom:10px;color:var(--maroon)}
+.mv .dark h4{color:var(--gold)}
+
+#heads{padding-top:100px;padding-bottom:90px;color:#fff;background:
+  radial-gradient(ellipse at 50% 0,rgba(0,0,0,.35) 0,transparent 70%),
+  radial-gradient(rgba(201,162,39,.28) 2px,transparent 2.6px) 0 0/30px 30px,
+  var(--maroon)}
+#heads::before{content:"";position:absolute;top:0;left:0;right:0;height:14px;background:radial-gradient(circle at 12px 0,var(--beige) 11px,transparent 11.5px) 0 0/24px 14px repeat-x;z-index:2}
+#heads .section-title h2{background:var(--gold);color:var(--maroon)}
+#heads .gold-line{background:linear-gradient(90deg,transparent,#fff,transparent)}
+.heads-box{border:4px solid var(--gold);border-radius:0;box-shadow:12px 12px 0 rgba(0,0,0,.35);color:#351414}
+
+.motto-strip{background:#4d0606;color:var(--gold);text-align:center;font-family:Georgia,serif;font-style:italic;font-weight:bold;letter-spacing:2px;padding:16px 5%;border-top:4px solid var(--gold)}
+.motto-strip span{margin:0 14px;white-space:nowrap}
+
+@media(max-width:800px){.about-box,.mv{grid-template-columns:1fr}section{padding:70px 6%}.about,#heads{padding-top:76px;padding-bottom:70px}nav ul{gap:16px}.section-title h2{padding:8px 46px}.polaroid{transform:rotate(-1.5deg)}.about-text,.mv article{box-shadow:7px 7px 0 var(--maroon)}.mv article.dark{box-shadow:7px 7px 0 var(--gold)}}
+</style>
+</head>
+<body>
+<nav>
+    <div class="logo-area">
+      <img src="images/logo.jfif" alt="NOHS seal">
+      <div class="logo-text">NOHS<small>Negros Occidental High School</small></div>
+    </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="members.html" >Members</a></li>
+        <li><a href="contact.html">Contacts</a></li>
+    </ul>
+  </nav>
+
+<section class="about" id="about">
+  <div class="section-title"><h2>About NOHS</h2><div class="gold-line"></div></div>
+  <div class="about-box">
+    <figure class="polaroid">
+  <img class="school-photo" src="images/mb.png" alt="The historic NOHS building">
+  <figcaption>The Most Historic NOHS Building <small>(Since 1902)</small></figcaption>
+</figure>
+    <div class="about-text">
+      <h3>History of the Main Building</h3>
+      <p>When the school opened on July 1, 1902, as Instituto Rizal (later Rizal Institute in 1913), it had no campus of its own. For nearly three decades, classes were held in spacious houses and dormitories rented from local landowner Don Antonio Jayme, and later at the old site that eventually became Rizal Elementary School.</p>
+      <p>In 1927, the Philippine Legislature funded a permanent campus along Araneta Street under the public works Appropriations Act. Because the budget line item labeled the project "The Construction of Bacolod High School," builders carved "Bacolod High School" into the concrete facade. Even when classes finally moved in during September 1931 and administrators kept the official name Negros Occidental High School, that stone inscription remained.</p>
+      <p>Just over a decade after opening, the building's peaceful academic life stopped when Japanese forces occupied Bacolod in May 1942. Because of its prominent location, thick concrete walls, and wide layout along Araneta Street, the Imperial Japanese Army commandeered the main building as a military headquarters and garrison. During the occupation, the campus grounds also served as a temporary burial site for Filipino soldiers and guerrilla fighters before liberation in 1945.</p>
+      <p>After the war, the building returned to educating generations of Negrenses, surviving several institutional shifts:</p>
+      <p>-1970: Under Republic Act No. 5694, the school was briefly renamed Negros Occidental General Comprehensive High School (NOGCHS) to reflect an expanded vocational and academic curriculum.</p>
+      <P>-1983: Through Batas Pambansa Bilang 2193, it officially reverted to Negros Occidental High School.</P>
+      <p>In 2002—the school's centennial year—the National Historical Commission of the Philippines (then the National Historical Institute) installed a Level II historical marker recognizing the site's role in Philippine education and wartime history. Today, its Neo-Classical columns, arched colonnade, and Gabaldon-inspired classrooms still house the school's main administrative offices at the heart of the modern campus.</p>
+    </div>
+     <div class="about-text">
+       <h3>About NOHS</h3>
+       <p>Negros Occidental High School was founded in 1902 and is a public secondary school in Bacolod City. For over a century, it has welcomed students from across the province.</p>
+       <p>Our teachers and staff give every student a strong academic foundation, good values, and the confidence to take on college, work, or community service.</p>
+       <p>Tradition, Excellence, and Service guide everything we do, and every Nohsian carries them beyond graduation.</p>
+     </div>
+  </div>
+  <div class="mv">
+    <article class="dark"><h4>Our Mission</h4><p>To provide quality, accessible education in a safe and supportive environment where every learner can grow academically, socially, and morally.</p></article>
+    <article><h4>Our Vision</h4><p>A community of competent, responsible, and caring Nohsians who contribute to a better Negros and a better Philippines.</p></article>
+  </div>
+</section>
+
+<section id="heads">
+  <div class="section-title"><h2>Our School Heads</h2><div class="gold-line"></div></div>
+  <div class="heads-box">
+    <p class="heads-intro">The people who have led Negros Occidental High School since it was founded in 1902.</p>
+    <div class="heads-cols">
+      <div class="heads-group">
+        <h3>School Administration (1902 – 1935)</h3>
+        <ul class="heads-list">
+          <li><span class="yrs">1902 – 1904</span><span class="nm">Mr. Ray Howell</span></li>
+          <li><span class="yrs">1904 – 1908</span><span class="nm">Amos A. David</span></li>
+          <li><span class="yrs">1908 – 1918</span><span class="nm">Mr. Dodrill</span></li>
+          <li><span class="yrs">1918 – 1920</span><span class="nm">Webber B. Spalding</span></li>
+          <li><span class="yrs">1920 – 1921</span><span class="nm">Mr. Hack</span></li>
+          <li><span class="yrs">1921 – 1922</span><span class="nm">Mr. Starboard</span></li>
+          <li><span class="yrs">1925 – 1927</span><span class="nm">Mr. Alme</span></li>
+          <li><span class="yrs">1927 – 1928</span><span class="nm">Arthur Stickle</span></li>
+          <li><span class="yrs">1928 – 1935</span><span class="nm">D’ Artagnan Williams</span></li>
+        </ul>
+      </div>
+      <div class="heads-group">
+        <h3>School Administration (1935 – present)</h3>
+        <p class="sub">Later, Filipino educators took over the school administration as high school principals.</p>
+        <ul class="heads-list">
+          <li><span class="yrs">1935 – 1941</span><span class="nm">Candido Sugatan</span></li>
+          <li><span class="yrs">1941 – 1946</span><span class="nm">Tomas Maglaya</span></li>
+          <li><span class="yrs">1946 – 1950</span><span class="nm">Dominador K. Lopez</span></li>
+          <li><span class="yrs">1950 – 1951</span><span class="nm">Piedad Villanueva</span></li>
+          <li><span class="yrs">1951 – 1956</span><span class="nm">Juan D. Saturnino</span></li>
+          <li><span class="yrs">1956 – 1959</span><span class="nm">Francisco O. Vinco</span></li>
+          <li><span class="yrs">1959 – 1965</span><span class="nm">Salvador Tacardon</span></li>
+          <li><span class="yrs">1965 – 1969</span><span class="nm">Fortunato Cachopero</span></li>
+          <li><span class="yrs">1969 – 1970</span><span class="nm">Lilia Alejandrino</span></li>
+          <li><span class="yrs">1970 – 1971</span><span class="nm">Aproniano Andas</span></li>
+          <li><span class="yrs">1971 – 1988</span><span class="nm">Epifanio Pajares</span></li>
+          <li><span class="yrs">1988 – 1993</span><span class="nm">Lilia R. Cuesta</span></li>
+          <li><span class="yrs">1993 – 2008</span><span class="nm">Nilda M. Monge</span></li>
+          <li><span class="yrs">2008 – 2009</span><span class="nm">Luisito Escalona (OIC)</span></li>
+          <li><span class="yrs">2009 – 2021</span><span class="nm">Mario S. Amaca</span></li>
+          <li><span class="yrs">2021 – 2025</span><span class="nm">Josette S. Terrora, Ph.D</span></li>
+          <li><span class="yrs">April 2025 – June 2026</span><span class="nm">Donnabella O. Aposaga (OIC)</span></li>
+          <li><span class="yrs">June 2026 – August 2026</span><span class="nm">Loini T. Torrecarrion (OIC)</span></li>
+          <li class="current"><span class="yrs">2025 – present</span><span class="nm">Cheryl J. Tondo, Ph.D</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="motto-strip"><span>&#9733; Tradition</span><span>&#9733; Excellence</span><span>&#9733; Service &#9733;</span></div>
+
+</body>
+</html>

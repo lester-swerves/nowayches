@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOHS | Negros Occidental High School</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.0/css/glightbox.min.css">
+<style>
+:root{--maroon:#720909;--red:#a71919;--gold:#c9a227;--beige:#f5e8cf;--cream:#fffaf0;--white:#fff}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:var(--cream);color:#351414;line-height:1.6}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+nav{background:var(--maroon);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 6%;position:sticky;top:0;z-index:1000;border-bottom:4px solid var(--gold);flex-wrap:wrap;gap:10px}
+.logo-area{display:flex;align-items:center;gap:12px}
+.logo-area img{width:64px;height:64px;border-radius:50%;object-fit:contain;background:#fff;border:3px solid var(--gold)}
+.logo-text{font-weight:bold;font-size:22px;line-height:1.2}
+.logo-text small{display:block;color:#f3d56b;font-size:11px}
+nav ul{display:flex;gap:25px;list-style:none;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none;font-weight:bold}
+nav a:hover{color:var(--gold)}
+
+section{position:relative;overflow:hidden;padding:96px 7% 100px;scroll-margin-top:80px}
+.section-title{text-align:center;margin-bottom:50px;filter:drop-shadow(0 4px 3px rgba(0,0,0,.25))}
+.section-title h2{display:inline-block;background:var(--maroon);color:#fff;font-family:Georgia,serif;font-size:clamp(26px,4vw,38px);padding:10px 64px;
+  clip-path:polygon(0 0,100% 0,calc(100% - 24px) 50%,100% 100%,0 100%,24px 50%)}
+.gold-line{width:140px;height:3px;margin:12px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+/* HERITAGE RIBBONS (same look as the About page) */
+#gallery{background:var(--beige)}
+#gallery::before{content:"";position:absolute;top:0;left:0;right:0;height:14px;background:radial-gradient(circle at 12px 0,var(--gold) 11px,transparent 11.5px) 0 0/24px 14px repeat-x}
+#gallery::after{content:"1902";position:absolute;right:3%;bottom:-2%;font-family:Georgia,serif;font-weight:bold;font-size:clamp(120px,24vw,320px);line-height:1;color:rgba(114,9,9,.07);pointer-events:none}
+.section-title,.gallery-grid,.video-feature{position:relative;z-index:1}
+
+.gallery-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px 26px}
+.gallery-grid figure{background:#fff;border:3px solid var(--gold);box-shadow:7px 7px 0 var(--maroon);padding:8px 8px 0;transition:transform .3s,box-shadow .3s}
+.gallery-grid figure:nth-child(odd){transform:rotate(-1.4deg)}
+.gallery-grid figure:nth-child(even){transform:rotate(1.2deg)}
+.gallery-grid figure:hover{transform:rotate(0) translateY(-4px);box-shadow:10px 10px 0 var(--maroon)}
+.shot{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background-color:var(--beige)}
+.gallery-grid figcaption{padding:10px 6px 12px;text-align:center;font-family:Georgia,serif;font-style:italic;font-weight:bold;color:var(--maroon);font-size:15px}
+
+/* Video thumbnail (opens in lightbox) */
+.video-feature{max-width:620px;margin:70px auto 0}
+.video-feature figure{background:#fff;border:3px solid var(--gold);box-shadow:10px 10px 0 var(--maroon);padding:8px 8px 0}
+.video-feature a{position:relative;display:block}
+.video-feature .shot{aspect-ratio:16/9}
+.video-feature .play{position:absolute;top:50%;left:50%;width:76px;height:76px;transform:translate(-50%,-50%);border-radius:50%;background:rgba(114,9,9,.9);border:3px solid var(--gold);display:grid;place-items:center;transition:.3s}
+.video-feature .play svg{width:34px;height:34px;fill:#fff;margin-left:4px}
+.video-feature a:hover .play{background:var(--gold);transform:translate(-50%,-50%) scale(1.08)}
+.video-feature a:hover .play svg{fill:var(--maroon)}
+.video-feature figcaption{padding:10px 6px 12px;text-align:center;font-family:Georgia,serif;font-style:italic;font-weight:bold;color:var(--maroon);font-size:15px}
+
+.motto-strip{background:#4d0606;color:var(--gold);text-align:center;font-family:Georgia,serif;font-style:italic;font-weight:bold;letter-spacing:2px;padding:16px 5%;border-top:4px solid var(--gold)}
+.motto-strip span{margin:0 14px;white-space:nowrap}
+
+@media(max-width:1000px){.gallery-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:800px){.gallery-grid{grid-template-columns:repeat(2,1fr);gap:26px 18px}section{padding:76px 6% 70px}nav ul{gap:16px}.section-title h2{padding:8px 46px}.gallery-grid figure{box-shadow:5px 5px 0 var(--maroon)}}
+@media(max-width:480px){.gallery-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}.gallery-grid figure,.play{transition:none}}
+</style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-area">
+          <img src="images/logo.jfif" alt="NOHS seal">
+          <div class="logo-text">NOHS<small>Negros Occidental High School</small></div>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="contact.html">Contacts</a></li>
+        </ul>
+      </nav>
+
+      <section id="gallery">
+        <div class="section-title"><h2>Gallery</h2><div class="gold-line"></div></div>
+        <div class="gallery-grid">
+          <figure><a href="images/Gallery (1).png" class="glightbox" data-gallery="nohs" data-title="SPTA General Assembly"><img class="shot" src="images/Gallery (1).png" alt="SPTA General Assembly" loading="lazy"></a><figcaption>SPTA General Assembly</figcaption></figure>
+          <figure><a href="images/Gallery (2).png" class="glightbox" data-gallery="nohs" data-title="Ceremonial Saber Arch"><img class="shot" src="images/Gallery (2).png" alt="Ceremonial Saber Arch" loading="lazy"></a><figcaption>Ceremonial Saber Arch</figcaption></figure>
+          <figure><a href="images/Gallery (3).png" class="glightbox" data-gallery="nohs" data-title="Teachers and Students"><img class="shot" src="images/Gallery (3).png" alt="Teachers and Students" loading="lazy"></a><figcaption>Teachers and Students</figcaption></figure>
+          <figure><a href="images/Gallery (4).png" class="glightbox" data-gallery="nohs" data-title="Learning Together"><img class="shot" src="images/Gallery (4).png" alt="Learning Together" loading="lazy"></a><figcaption>Learning Together</figcaption></figure>
+          <figure><a href="images/Gallery (5).png" class="glightbox" data-gallery="nohs" data-title="Oath-Taking"><img class="shot" src="images/Gallery (5).png" alt="Oath-Taking" loading="lazy"></a><figcaption>Oath-Taking</figcaption></figure>
+          <figure><a href="images/Gallery (6).png" class="glightbox" data-gallery="nohs" data-title="Inside the Chapel"><img class="shot" src="images/Gallery (6).png" alt="Inside the Chapel" loading="lazy"></a><figcaption>Inside the Chapel</figcaption></figure>
+          <figure><a href="images/Gallery (7).png" class="glightbox" data-gallery="nohs" data-title="Sportsmanship"><img class="shot" src="images/Gallery (7).png" alt="Sportsmanship" loading="lazy"></a><figcaption>Sportsmanship</figcaption></figure>
+          <figure><a href="images/Gallery (8).png" class="glightbox" data-gallery="nohs" data-title="Teachers and Faculty members in Filipiniana"><img class="shot" src="images/Gallery (8).png" alt="Teachers and Faculty members in Filipiniana" loading="lazy"></a><figcaption>Teachers and Faculty members in Filipiniana</figcaption></figure>
+          <figure><a href="images/Gallery (9).png" class="glightbox" data-gallery="nohs" data-title="Evening Ceremony"><img class="shot" src="images/Gallery (9).png" alt="Evening Ceremony" loading="lazy"></a><figcaption>Evening Ceremony</figcaption></figure>
+          <figure><a href="images/Gallery (10).png" class="glightbox" data-gallery="nohs" data-title="The Nohsian Community"><img class="shot" src="images/Gallery (10).png" alt="The Nohsian Community" loading="lazy"></a><figcaption>The Nohsian Community</figcaption></figure>
+          <figure><a href="images/Gallery (11).png" class="glightbox" data-gallery="nohs" data-title="Campus Activity"><img class="shot" src="images/Gallery (11).png" alt="Campus Activity" loading="lazy"></a><figcaption>Campus Activity</figcaption></figure>
+          <figure><a href="images/Gallery (12).png" class="glightbox" data-gallery="nohs" data-title="Recognition Day"><img class="shot" src="images/Gallery (12).png" alt="Recognition Day" loading="lazy"></a><figcaption>Recognition Day</figcaption></figure>
+        </div>
+
+        <div class="video-feature">
+          <figure>
+            <a href="https://www.youtube.com/watch?v=dk_KUxCvFSw" class="glightbox" data-type="video" data-source="youtube" data-gallery="nohs-video" data-title="NOHS Video" data-width="900px" data-height="506px" aria-label="Play NOHS video">
+              <img class="shot" src="https://img.youtube.com/vi/dk_KUxCvFSw/hqdefault.jpg" alt="NOHS video thumbnail" loading="lazy">
+              <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            </a>
+            <figcaption>WVRAA DANCE VIDEO</figcaption>
+          </figure>
+        </div>
+      </section>
+
+<div class="motto-strip"><span>&#9733; Tradition</span><span>&#9733; Excellence</span><span>&#9733; Service &#9733;</span></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.0/js/glightbox.min.js"></script>
+<script>
+  GLightbox({
+    selector: '.glightbox',
+    loop: true,
+    touchNavigation: true,
+    autoplayVideos: true,
+    plyr: { config: { youtube: { noCookie: true, rel: 0 } } }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOHS | Negros Occidental High School</title>
+<style>
+:root{--maroon:#720909;--red:#a71919;--gold:#c9a227;--beige:#f5e8cf;--cream:#fffaf0;--white:#fff}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:var(--cream);color:#351414;line-height:1.6}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+nav{background:var(--maroon);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 6%;position:sticky;top:0;z-index:1000;border-bottom:4px solid var(--gold);flex-wrap:wrap;gap:10px}
+.logo-area{display:flex;align-items:center;gap:12px}
+.logo-area img{width:64px;height:64px;border-radius:50%;object-fit:contain;background:#fff;border:3px solid var(--gold)}
+.logo-text{font-weight:bold;font-size:22px;line-height:1.2}
+.logo-text small{display:block;color:#f3d56b;font-size:11px}
+nav ul{display:flex;gap:25px;list-style:none;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none;font-weight:bold}
+nav a:hover{color:var(--gold)}
+
+.btn{display:inline-block;padding:12px 26px;background:var(--gold);color:var(--maroon);border:0;border-radius:0;font-weight:bold;font-size:16px;text-decoration:none;cursor:pointer;transition:.3s}
+.btn:hover{background:#fff;transform:translateY(-2px)}
+
+section{position:relative;overflow:hidden;padding:96px 7% 110px;scroll-margin-top:80px}
+.section-title{text-align:center;margin-bottom:54px;filter:drop-shadow(0 4px 3px rgba(0,0,0,.25))}
+.section-title h2{display:inline-block;background:var(--maroon);color:#fff;font-family:Georgia,serif;font-size:clamp(26px,4vw,38px);padding:10px 64px;
+  clip-path:polygon(0 0,100% 0,calc(100% - 24px) 50%,100% 100%,0 100%,24px 50%)}
+.gold-line{width:140px;height:3px;margin:12px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+/* HERITAGE RIBBONS (same look as the other pages) */
+#contact{background:var(--beige)}
+#contact::before{content:"";position:absolute;top:0;left:0;right:0;height:14px;background:radial-gradient(circle at 12px 0,var(--gold) 11px,transparent 11.5px) 0 0/24px 14px repeat-x}
+#contact::after{content:"1902";position:absolute;right:3%;bottom:-2%;font-family:Georgia,serif;font-weight:bold;font-size:clamp(120px,24vw,320px);line-height:1;color:rgba(114,9,9,.07);pointer-events:none}
+.section-title,.contact-box{position:relative;z-index:1}
+
+.contact-box{max-width:1000px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.contact-info,form{background:#fff;border:3px solid var(--gold);box-shadow:10px 10px 0 var(--maroon);padding:30px 28px}
+.contact-info h3{font-family:Georgia,serif;color:var(--maroon);font-size:26px;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--gold)}
+.quick{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+.quick .btn{display:flex;align-items:center;gap:10px;padding:11px 16px;font-size:15px;overflow-wrap:anywhere}
+.quick .btn svg{width:18px;height:18px;flex:0 0 18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.quick .btn svg.fill{fill:currentColor;stroke:none}
+.quick .btn.static,.quick .btn.static:hover{background:var(--maroon);color:#fff;transform:none;cursor:default}
+.btn.dark{background:var(--maroon);color:#fff;border-left:5px solid var(--gold)}
+.btn.dark:hover{background:var(--red);color:#fff}
+form{display:grid;gap:14px}
+label{font-weight:bold;color:var(--maroon);font-size:14px}
+input,textarea{width:100%;padding:12px;border:2px solid #d9c9a6;border-radius:0;font:inherit;background:var(--cream);transition:border-color .2s,background .2s}
+input:focus,textarea:focus{border-color:var(--gold);background:#fff}
+textarea{min-height:130px;resize:vertical}
+form .btn{background:var(--maroon);color:#fff;border:2px solid var(--gold)}
+form .btn:hover{background:var(--gold);color:var(--maroon)}
+
+footer{background:#4d0606;color:var(--beige);text-align:center;padding:28px 7%;font-size:14px;border-top:4px solid var(--gold)}
+footer em{display:block;color:var(--gold);margin-bottom:6px;font-family:Georgia,serif;font-size:16px}
+
+@media(max-width:800px){.contact-box{grid-template-columns:1fr;gap:40px}section{padding:76px 6% 80px}nav ul{gap:16px}.section-title h2{padding:8px 46px}.contact-info,form{box-shadow:7px 7px 0 var(--maroon);padding:24px 20px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-area">
+          <img src="images/logo.jfif" alt="NOHS seal">
+          <div class="logo-text">NOHS<small>Negros Occidental High School</small></div>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="members.html" >Members</a></li>
+            <li><a href="contact.html">Contacts</a></li>
+        </ul>
+      </nav>
+
+      <section id="contact">
+        <div class="section-title"><h2>Contacts</h2><div class="gold-line"></div></div>
+        <div class="contact-box">
+          <div class="contact-info">
+            <h3>Visit or Reach Us</h3>
+            <div class="quick">
+              <span class="btn dark static"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> +63 34 433 9377</span>
+              <a class="btn dark" href="mailto:nohsbacolod@yahoo.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> nohsbacolod@yahoo.com</a>
+              <a class="btn dark" href="https://www.facebook.com/nohsbacolod2002" target="_blank" rel="noopener"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.9.4-1.7 1.8-1.7h1.6V3.8c-.3 0-1.3-.2-2.4-.2-2.5 0-4.1 1.5-4.1 4.2v2.7H7.6v3.3h2.8V22h3.1z"/></svg> facebook.com/nohsbacolod2002</a>
+              <a class="btn dark" href="https://www.google.com/maps/search/Negros+Occidental+High+School+Bacolod" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Bacolod City, Negros Occidental</a>
+            </div>
+          </div>
+          <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+            <div><label for="name">Name</label><input id="name" name="name" required></div>
+            <div><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+            <div><label for="msg">Message</label><textarea id="msg" name="message" required></textarea></div>
+            <button class="btn" type="submit">Send Message</button>
+          </form>
+        </div>
+      </section>
+
+      <footer>
+        <em>Tradition &bull; Excellence &bull; Service</em>
+        &copy; 2026 Negros Occidental High School, Bacolod City. Founded 1902.
+      </footer>
+
+</body>
+</html>

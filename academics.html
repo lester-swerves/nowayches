@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOHS | Negros Occidental High School</title>
+<style>
+:root{--maroon:#720909;--red:#a71919;--gold:#c9a227;--beige:#f5e8cf;--cream:#fffaf0;--white:#fff}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:var(--cream);color:#351414;line-height:1.6}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+nav{background:var(--maroon);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 6%;position:sticky;top:0;z-index:1000;border-bottom:4px solid var(--gold);flex-wrap:wrap;gap:10px}
+.logo-area{display:flex;align-items:center;gap:12px}
+.logo-area img{width:64px;height:64px;border-radius:50%;object-fit:contain;background:#fff;border:3px solid var(--gold)}
+.logo-text{font-weight:bold;font-size:22px;line-height:1.2}
+.logo-text small{display:block;color:#f3d56b;font-size:11px}
+nav ul{display:flex;gap:25px;list-style:none;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none;font-weight:bold}
+nav a:hover{color:var(--gold)}
+
+section{position:relative;overflow:hidden;padding:96px 7% 110px;scroll-margin-top:80px}
+.section-title{text-align:center;margin-bottom:54px;filter:drop-shadow(0 4px 3px rgba(0,0,0,.25))}
+.section-title h2{display:inline-block;background:var(--maroon);color:#fff;font-family:Georgia,serif;font-size:clamp(26px,4vw,38px);padding:10px 64px;
+  clip-path:polygon(0 0,100% 0,calc(100% - 24px) 50%,100% 100%,0 100%,24px 50%)}
+.gold-line{width:140px;height:3px;margin:12px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+/* HERITAGE RIBBONS (same look as the About and Gallery pages) */
+.academics{background:var(--beige)}
+.academics::before{content:"";position:absolute;top:0;left:0;right:0;height:14px;background:radial-gradient(circle at 12px 0,var(--gold) 11px,transparent 11.5px) 0 0/24px 14px repeat-x}
+.academics::after{content:"1902";position:absolute;right:3%;bottom:-2%;font-family:Georgia,serif;font-weight:bold;font-size:clamp(120px,24vw,320px);line-height:1;color:rgba(114,9,9,.07);pointer-events:none}
+.section-title,.card-grid{position:relative;z-index:1}
+
+.card-grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:44px 36px}
+.card{background:#fff;border:3px solid var(--gold);box-shadow:10px 10px 0 var(--maroon);padding:30px 26px 26px;transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translate(-3px,-3px);box-shadow:13px 13px 0 var(--maroon)}
+.card:nth-child(even){background:var(--maroon);color:#fff;box-shadow:10px 10px 0 var(--gold)}
+.card:nth-child(even):hover{box-shadow:13px 13px 0 var(--gold)}
+.card h4{font-family:Georgia,serif;color:var(--maroon);font-size:22px;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--gold)}
+.card:nth-child(even) h4{color:var(--gold)}
+
+.motto-strip{background:#4d0606;color:var(--gold);text-align:center;font-family:Georgia,serif;font-style:italic;font-weight:bold;letter-spacing:2px;padding:16px 5%;border-top:4px solid var(--gold)}
+.motto-strip span{margin:0 14px;white-space:nowrap}
+
+@media(max-width:800px){section{padding:76px 6% 80px}nav ul{gap:16px}.section-title h2{padding:8px 46px}.card,.card:nth-child(even){box-shadow:7px 7px 0 var(--maroon)}.card:nth-child(even){box-shadow:7px 7px 0 var(--gold)}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}.card{transition:none}}
+</style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-area">
+          <img src="images/logo.jfif" alt="NOHS seal">
+          <div class="logo-text">NOHS<small>Negros Occidental High School</small></div>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="members.html" >Members</a></li>
+            <li><a href="contact.html">Contacts</a></li>
+        </ul>
+      </nav>
+
+      <section class="academics" id="academics">
+        <div class="section-title"><h2>Academics</h2><div class="gold-line"></div></div>
+        <div class="card-grid">
+          <div class="card"><h4>Junior High School</h4><p>Grades 7 to 10, covering the core subjects in English, Filipino, Mathematics, Science, and Araling Panlipunan.</p></div>
+          <div class="card"><h4>Senior High School</h4><p>Grades 11 and 12 with tracks and strands that prepare students for college and careers. Stem, ABM, Humss, CSS, Automotive, and Home Economics.</p></div>
+          <div class="card"><h4>Special Programs</h4><p>List of special curricular programs, such as special science class(STEM), basic education (regular/night class), special program in arts, journalism, culture and sports.</p></div>
+          <div class="card"><h4>Student Life</h4><p>Clubs, sports, and school activities that build leadership, teamwork, and meet new people.</p></div>
+        </div>
+      </section>
+
+<div class="motto-strip"><span>&#9733; Tradition</span><span>&#9733; Excellence</span><span>&#9733; Service &#9733;</span></div>
+
+</body>
+</html>
